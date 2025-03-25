@@ -36,7 +36,7 @@ module "hub_vpc" {
   prefix                            = "${var.prefix}-hub"
   tags                              = var.resource_tags
   enable_hub                        = true
-  skip_custom_resolver_hub_creation = true
+  dns_zone_name                     = "someexample.com"
   subnets = {
     zone-1 = [
       {
@@ -121,6 +121,6 @@ module "tg_gateway_connection" {
   global_routing            = false
   resource_tags             = var.resource_tags
   resource_group_id         = module.resource_group.resource_group_id
-  vpc_connections           = [module.hub_vpc.vpc_crn, module.spoke_vpc.vpc_crn]
+  vpc_connections           = [{vpc_crn = module.hub_vpc.vpc_crn}, { vpc_crn = module.spoke_vpc.vpc_crn }]
   classic_connections_count = 0
 }
