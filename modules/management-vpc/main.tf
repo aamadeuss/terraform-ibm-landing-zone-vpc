@@ -22,6 +22,4 @@ module "management_vpc" {
   enable_vpc_flow_logs                   = var.enable_vpc_flow_logs
   create_authorization_policy_vpc_to_cos = var.create_authorization_policy_vpc_to_cos
   existing_cos_instance_guid             = var.existing_cos_instance_guid
-  existing_storage_bucket_name           = var.existing_cos_bucket_name
-  clean_default_sg_acl                   = var.clean_default_sg_acl
 }

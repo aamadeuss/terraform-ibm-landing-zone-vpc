@@ -29,13 +29,14 @@ resource "time_sleep" "delay_between_hub_spoke" {
 #############################################################################
 
 module "hub_vpc" {
-  source            = "../../"
-  resource_group_id = module.resource_group.resource_group_id
-  region            = var.region
-  name              = "hub"
-  prefix            = "${var.prefix}-hub"
-  tags              = var.resource_tags
-  enable_hub        = true
+  source                            = "../../"
+  resource_group_id                 = module.resource_group.resource_group_id
+  region                            = var.region
+  name                              = "hub"
+  prefix                            = "${var.prefix}-hub"
+  tags                              = var.resource_tags
+  enable_hub                        = true
+  skip_custom_resolver_hub_creation = true
   subnets = {
     zone-1 = [
       {
@@ -114,7 +115,7 @@ module "spoke_vpc" {
 
 module "tg_gateway_connection" {
   source                    = "terraform-ibm-modules/transit-gateway/ibm"
-  version                   = "2.4.3"
+  version                   = "2.5.0"
   transit_gateway_name      = "${var.prefix}-tg"
   region                    = var.region
   global_routing            = false
