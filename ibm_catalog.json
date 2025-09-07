@@ -247,7 +247,8 @@
               }
             },
             {
-              "key": "address_prefixes"
+              "key": "address_prefixes",
+              "required": true
             },
             {
               "key": "security_group_rules",
