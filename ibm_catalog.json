@@ -1,0 +1,637 @@
+{
+  "products": [
+    {
+      "name": "deploy-arch-ibm-vpc",
+      "label": "Cloud automation for VPC",
+      "product_kind": "solution",
+      "tags": [
+        "ibm_created",
+        "target_terraform",
+        "terraform",
+        "solution",
+        "network",
+        "network_vpc",
+        "converged_infra"
+      ],
+      "keywords": [
+        "vpc",
+        "terraform",
+        "IaC",
+        "infrastructure as code",
+        "solution"
+      ],
+      "short_description": "Deploy a Virtual Private Cloud (VPC) on IBM Cloud, offering full configurability and flexibility for diverse workloads.",
+      "long_description": "The Cloud automation for VPC sets up a foundational IBM Cloud [Virtual Private Cloud (VPC)](https://www.ibm.com/cloud/vpc) environment. It lays the groundwork for adding Virtual Servers Instances (VSI) or Red Hat OpenShift clusters and other advanced resources. This can be used as a base deployable architecture for many others deployable architectures like [Cloud automation for Red Hat OpenShift Container Platform on VPC](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-ocp-vpc-1728a4fd-f561-4cf9-82ef-2b1eeb5da1a8-global), [Cloud automation for Red Hat OpenShift AI](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-ocp-ai-ba708aed-bb8a-4ac0-83a7-53a066701db5-global), [Cloud automation for Virtual Servers for Virtual Private Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-vsi-vpc-28e2b12c-858f-4ae8-8717-60db8cec2e6e-global).\n\nℹ️ This Terraform-based automation is part of a broader suite of IBM-maintained Infrastructure as Code (IaC) assets, each following the naming pattern \"Cloud automation for *servicename*\" and focusing on single IBM Cloud service. These single-service deployable architectures can be used on their own to streamline and automate service deployments through an [IaC approach](https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-understanding-projects), or assembled together into a broader [automated IaC stack](https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-config-stack) to automate the deployment of an end-to-end solution architecture.",
+      "offering_docs_url": "https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/blob/main/solutions/fully-configurable/README.md",
+      "offering_icon_url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/main/images/vpc_icon.svg",
+      "provider_name": "IBM",
+      "features": [
+        {
+          "title": "Subnets",
+          "description": "Create [subnets](https://cloud.ibm.com/docs/vpc?topic=vpc-about-subnets-vpc) in three zones that divides your VPC into smaller, isolated networks across different availability zones. This helps you organize resources, improve availability, and control internal communication."
+        },
+        {
+          "title": "Network ACLs",
+          "description": "Define rules for [Network Access Control Lists (ACLs)](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls) to allow or deny traffic to and from your subnets, providing an extra layer of network security."
+        },
+        {
+          "title": "Public gateways",
+          "description": "Configures [public gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-about-public-gateways) to provide internet access to your VPC resources, acting as a bridge between private network components and the public internet."
+        },
+        {
+          "title": "VPN gateways",
+          "description": "Create and configures [VPN gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-overview) to enable secure, encrypted connections between your on-premises environment and IBM Cloud, ideal for hybrid cloud setups."
+        },
+        {
+          "title": "VPE gateways",
+          "description": "Creates Virtual Private Endpoints (VPEs) gateways to allow private access to IBM Cloud services from within your VPC, avoiding public internet traffic. [Learn more](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe)."
+        },
+        {
+          "title": "Security groups",
+          "description": "Has the ability to configure security groups that works like virtual firewalls for your instances, defining rules that control allowed inbound and outbound traffic. [Learn more](https://cloud.ibm.com/docs/vpc?topic=vpc-using-security-groups)."
+        },
+        {
+          "title": "Address Prefixes",
+          "description": "Attaches address prefixes to define the IP address ranges used by your subnets, helping with IP management and planning in your VPC."
+        },
+        {
+          "title": "Routing Table and routes",
+          "description": "Creates routing tables and custom routes to determine how traffic is directed within your VPC and to external networks. [Learn more](https://cloud.ibm.com/docs/vpc?topic=vpc-create-vpc-routing-table&interface=ui)."
+        },
+        {
+          "title": "VPC flow logs",
+          "description": "Creates and configures [VPC flow logs]((https://cloud.ibm.com/docs/vpc?topic=vpc-flow-logs)) capture data about traffic moving through your network, helping with monitoring, auditing, and troubleshooting."
+        },
+        {
+          "title": "Object Storage bucket for flow logs",
+          "description": "Creates and configures the Object storage bucket to store the network traffic data captured by VPC flow logs, enabling analysis and long-term storage."
+        },
+        {
+          "title": "KMS encryption",
+          "description": "Supports Key Management Service (KMS) encryption for the Object Storage bucket where flow logs are stored, enhancing data security."
+        },
+        {
+          "title": "Optional Integrations",
+          "description": "This solution can be integrated with [Cloud automation for Observability](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-observability-a3137d28-79e0-479d-8a24-758ebd5a0eab-global) that supports configuring resources for logging, monitoring and activity tracker event routing."
+        }
+      ],
+      "support_details": "This product is in the community registry, support is handled through the [original repo](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc). If you experience issues, please open an issue in the repository [here](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/issues). Please note this product is not supported via the IBM Cloud Support Center.",
+      "flavors": [
+        {
+          "label": "Fully configurable",
+          "name": "fully-configurable",
+          "index": 1,
+          "install_type": "fullstack",
+          "working_directory": "solutions/fully-configurable",
+          "compliance": {
+            "authority": "scc-v3",
+            "profiles": [
+              {
+                "profile_name": "IBM Cloud Framework for Financial Services",
+                "profile_version": "1.7.0"
+              }
+            ]
+          },
+          "architecture": {
+            "features": [
+              {
+                "title": " ",
+                "description": "Configured to use IBM secure by default standards, but can be edited to fit your use case."
+              }
+            ],
+            "diagrams": [
+              {
+                "diagram": {
+                  "caption": "Virtual Private Cloud topology",
+                  "url": "https://raw.githubusercontent.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/main/reference-architecture/deployable-architecture-vpc.svg",
+                  "type": "image/svg+xml"
+                },
+                "description": "This architecture supports provisioning and configuring a <b>Virtual Private Cloud (VPC)</b> environment. While the diagram illustrates a three-zone deployment, the VPC can also be provisioned in a single-zone or two-zone configuration, depending on your availability requirements.<br><br>The default configuration deploys a VPC with three zone subnets, configures the predefined ACLs, and attaches a public gateway with one of the subnets. Additional functionalities such as VPN gateway, VPE gateway, Flow Logs, security groups, etc., can be configured by providing the appropriate input values.<br><br>VPC Flow Logs are used to monitor and analyze traffic. To enable VPC Flow Logs, this solution automatically manages the following tasks:<br>- Provisions a Cloud Object Storage (COS) instance using the COS deployable architecture. Alternatively, you can provide an existing COS instance if available.<br>- Creates an object storage bucket to store flow logs in the provisioned or existing COS instance.<br>- Supports creation of keys for a Key Management Service (KMS) if a KMS-encrypted bucket is enabled for enhanced security. You can use an existing KMS instance or create a new Key Protect instance using the KMS deployable architecture.<br><br>In addition, you have an option to integrate with <b>Observability services</b>. [Cloud automation for Observability](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-observability-a3137d28-79e0-479d-8a24-758ebd5a0eab-global) provides robust monitoring and logging capabilities to deliver deep operational insights into your VPC deployment. You can use <b>IBM Cloud Activity Tracker Event Routing</b> to monitor how users and applications interact with the VPC, supporting compliance and auditability. <b>Cloud Logs</b> can be enabled to collect, view, and analyze platform logs related to the VPC components. Furthermore, <b>IBM Cloud Monitoring</b> captures essential metrics such as CPU and memory utilization, helping you proactively monitor system performance and resource consumption.<br><br>This modular design provides flexibility and serves as a secure baseline for deploying compute workloads."
+              }
+            ]
+          },
+          "iam_permissions": [
+            {
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::role:Viewer"
+              ],
+              "service_name": "Resource group only",
+              "notes": "Viewer access is required in the resource group you want to provision in."
+            },
+            {
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::role:Administrator"
+              ],
+              "service_name": "iam-identity",
+              "notes": "[Optional] Required if Cloud automation for account configuration is enabled."
+            },
+            {
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::role:Administrator"
+              ],
+              "service_name": "is.vpc",
+              "notes": "Required for creating Virtual Private Cloud(VPC)."
+            },
+            {
+              "service_name": "cloud-object-storage",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ],
+              "notes": "[Optional] Required if you are enabling VPC flow logs."
+            },
+            {
+              "service_name": "kms",
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ],
+              "notes": "[Optional] Required if KMS encryption is enabled to encrypt the Object Storage bucket used for storing flow logs."
+            },
+            {
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ],
+              "service_name": "sysdig-monitor",
+              "notes": "[Optional] Required for consuming Observability deployable architecture which sets up Cloud monitoring."
+            },
+            {
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                "crn:v1:bluemix:public:iam::::role:Editor"
+              ],
+              "service_name": "logs",
+              "notes": "[Optional] Required for consuming Observability deployable architecture which sets up Cloud logs."
+            }
+          ],
+          "configuration": [
+            {
+              "key": "ibmcloud_api_key"
+            },
+            {
+              "key": "prefix",
+              "required": true
+            },
+            {
+              "key": "region",
+              "required": true,
+              "custom_config": {
+                "config_constraints": {
+                  "generationType": "2"
+                },
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "type": "vpc_region"
+              }
+            },
+            {
+              "key": "vpc_name",
+              "required": true
+            },
+            {
+              "key": "enable_platform_metrics",
+              "type": "boolean",
+              "default_value": false,
+              "description": "When set to `true`, the IBM Cloud Monitoring instance will be configured to collect platform metrics from the provided region. You can configure 1 instance only of the IBM Cloud Monitoring service per region to collect platform metrics in that location. Check with the account or service administrator if another monitoring instance has already been configured. You may not have permissions to see all monitoring instances in the region. [Learn more](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling).",
+              "required": true,
+              "virtual": true,
+              "options": [
+                {
+                  "displayname": "true",
+                  "value": "true"
+                },
+                {
+                  "displayname": "false",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "key": "logs_routing_tenant_regions",
+              "type": "array",
+              "default_value": [],
+              "description": "To manage platform logs that are generated by IBM Cloud services in a region of IBM Cloud, you must create a tenant in each region that you operate. Pass a list of regions to create a tenant in. [Learn more](https://cloud.ibm.com/docs/logs-router?topic=logs-router-about-platform-logs).",
+              "required": true,
+              "virtual": true,
+              "custom_config": {
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "existing_resource_group_name",
+              "display_name": "resource_group",
+              "custom_config": {
+                "type": "resource_group",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "identifier": "rg_name"
+                }
+              }
+            },
+            {
+              "key": "subnets"
+            },
+            {
+              "key": "network_acls",
+              "type": "array",
+              "custom_config": {
+                "type": "textarea",
+                "grouping": "deployment",
+                "original_grouping": "deployment"
+              }
+            },
+            {
+              "key": "address_prefixes",
+              "required": true
+            },
+            {
+              "key": "security_group_rules",
+              "type": "array",
+              "custom_config": {
+                "type": "textarea",
+                "grouping": "deployment",
+                "original_grouping": "deployment"
+              }
+            },
+            {
+              "key": "clean_default_security_group_acl"
+            },
+            {
+              "key": "vpn_gateways",
+              "type": "array",
+              "custom_config": {
+                "type": "textarea",
+                "grouping": "deployment",
+                "original_grouping": "deployment"
+              }
+            },
+            {
+              "key": "routes",
+              "type": "array",
+              "custom_config": {
+                "type": "textarea",
+                "grouping": "deployment",
+                "original_grouping": "deployment"
+              }
+            },
+            {
+              "key": "vpe_gateway_cloud_services",
+              "type": "array"
+            },
+            {
+              "key": "vpe_gateway_cloud_service_by_crn",
+              "type": "array"
+            },
+            {
+              "key": "vpe_gateway_security_group_ids",
+              "hidden": true,
+              "custom_config": {
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "vpe_gateway_service_endpoints",
+              "options": [
+                {
+                  "displayname": "Public",
+                  "value": "public"
+                },
+                {
+                  "displayname": "Private",
+                  "value": "private"
+                }
+              ]
+            },
+            {
+              "key": "vpe_gateway_reserved_ips"
+            },
+            {
+              "key": "default_network_acl_name"
+            },
+            {
+              "key": "default_security_group_name"
+            },
+            {
+              "key": "default_routing_table_name"
+            },
+            {
+              "key": "resource_tags",
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "access_tags",
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "enable_vpc_flow_logs"
+            },
+            {
+              "key": "existing_cos_instance_crn"
+            },
+            {
+              "key": "skip_vpc_cos_iam_auth_policy"
+            },
+            {
+              "key": "flow_logs_cos_bucket_name"
+            },
+            {
+              "key": "kms_encryption_enabled_bucket"
+            },
+            {
+              "key": "existing_flow_logs_bucket_kms_key_crn"
+            },
+            {
+              "key": "existing_kms_instance_crn"
+            },
+            {
+              "key": "skip_cos_kms_iam_auth_policy"
+            },
+            {
+              "key": "kms_endpoint_type",
+              "hidden": true,
+              "options": [
+                {
+                  "displayname": "private",
+                  "value": "private"
+                },
+                {
+                  "displayname": "public",
+                  "value": "public"
+                }
+              ]
+            },
+            {
+              "key": "kms_key_ring_name"
+            },
+            {
+              "key": "kms_key_name"
+            },
+            {
+              "key": "ibmcloud_kms_api_key"
+            },
+            {
+              "key": "management_endpoint_type_for_bucket",
+              "options": [
+                {
+                  "displayname": "Public",
+                  "value": "public"
+                },
+                {
+                  "displayname": "Private",
+                  "value": "private"
+                },
+                {
+                  "displayname": "Direct",
+                  "value": "direct"
+                }
+              ]
+            },
+            {
+              "key": "cos_bucket_class",
+              "options": [
+                {
+                  "displayname": "Standard",
+                  "value": "standard"
+                },
+                {
+                  "displayname": "Vault",
+                  "value": "vault"
+                },
+                {
+                  "displayname": "Cold",
+                  "value": "cold"
+                },
+                {
+                  "displayname": "Smart",
+                  "value": "smart"
+                },
+                {
+                  "displayname": "OneRate Active",
+                  "value": "onerate_active"
+                }
+              ]
+            },
+            {
+              "key": "add_bucket_name_suffix"
+            },
+            {
+              "key": "flow_logs_cos_bucket_archive_days"
+            },
+            {
+              "key": "flow_logs_cos_bucket_archive_type",
+              "options": [
+                {
+                  "displayname": "Glacier",
+                  "value": "Glacier"
+                },
+                {
+                  "displayname": "Accelerated",
+                  "value": "Accelerated"
+                }
+              ]
+            },
+            {
+              "key": "flow_logs_cos_bucket_expire_days"
+            },
+            {
+              "key": "flow_logs_cos_bucket_enable_object_versioning"
+            },
+            {
+              "key": "flow_logs_cos_bucket_enable_retention"
+            },
+            {
+              "key": "flow_logs_cos_bucket_default_retention_days"
+            },
+            {
+              "key": "flow_logs_cos_bucket_maximum_retention_days"
+            },
+            {
+              "key": "flow_logs_cos_bucket_minimum_retention_days"
+            },
+            {
+              "key": "flow_logs_cos_bucket_enable_permanent_retention"
+            },
+            {
+              "key": "provider_visibility",
+              "hidden": true,
+              "options": [
+                {
+                  "displayname": "private",
+                  "value": "private"
+                },
+                {
+                  "displayname": "public",
+                  "value": "public"
+                },
+                {
+                  "displayname": "public-and-private",
+                  "value": "public-and-private"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "name": "deploy-arch-ibm-account-infra-base",
+              "description": "Cloud automation for Account Configuration organizes your IBM Cloud account with a ready-made set of resource groups by default and when you enable the \"with Account Settings\" option, it also applies baseline security and governance settings. ",
+              "catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+              "flavors": [
+                "resource-group-only",
+                "resource-groups-with-account-settings"
+              ],
+              "default_flavor": "resource-group-only",
+              "id": "63641cec-6093-4b4f-b7b0-98d2f4185cd6-global",
+              "input_mapping": [
+                {
+                  "dependency_input": "prefix",
+                  "version_input": "prefix",
+                  "reference_version": true
+                },
+                {
+                  "dependency_output": "workload_resource_group_name",
+                  "version_input": "existing_resource_group_name"
+                }
+              ],
+              "optional": true,
+              "on_by_default": false,
+              "version": "v3.0.7"
+            },
+            {
+              "name": "deploy-arch-ibm-kms",
+              "id": "2cad4789-fa90-4886-9c9e-857081c273ee-global",
+              "description": "Enable Cloud Automation for Key Protect to use customer-managed encryption keys (CMKs) for encrypting the Cloud Object Storage bucket used to store VPC Flow Logs. If disabled, IBM Cloud's default service-managed encryption will be used instead. Applicable only when VPC Flow logs are enabled. ",
+              "flavors": [
+                "fully-configurable"
+              ],
+              "catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+              "input_mapping": [
+                {
+                  "dependency_output": "kms_instance_crn",
+                  "version_input": "existing_kms_instance_crn"
+                },
+                {
+                  "dependency_input": "prefix",
+                  "version_input": "prefix",
+                  "reference_version": true
+                },
+                {
+                  "dependency_input": "region",
+                  "version_input": "region",
+                  "reference_version": true
+                },
+                {
+                  "dependency_input": "kms_endpoint_type",
+                  "version_input": "kms_endpoint_type",
+                  "reference_version": true
+                },
+                {
+                  "version_input": "kms_encryption_enabled_bucket",
+                  "value": true
+                },
+                {
+                  "version_input": "enable_vpc_flow_logs",
+                  "value": true
+                }
+              ],
+              "optional": true,
+              "on_by_default": true,
+              "version": "v5.1.4"
+            },
+            {
+              "name": "deploy-arch-ibm-cos",
+              "id": "68921490-2778-4930-ac6d-bae7be6cd958-global",
+              "description": "Enable to create an IBM Cloud Object Storage (COS) instance, where a bucket will be set up to store VPC flow logs as part of this deployment. ",
+              "flavors": [
+                "instance"
+              ],
+              "catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+              "input_mapping": [
+                {
+                  "dependency_input": "resource_group_name",
+                  "version_input": "existing_resource_group_name",
+                  "reference_version": true
+                },
+                {
+                  "dependency_output": "cos_instance_crn",
+                  "version_input": "existing_cos_instance_crn"
+                },
+                {
+                  "dependency_input": "prefix",
+                  "version_input": "prefix",
+                  "reference_version": true
+                },
+                {
+                  "version_input": "enable_vpc_flow_logs",
+                  "value": true
+                }
+              ],
+              "optional": true,
+              "on_by_default": true,
+              "version": "v9.0.2"
+            },
+            {
+              "name": "deploy-arch-ibm-observability",
+              "description": "Configure IBM Cloud Logs, Cloud Monitoring and Activity Tracker event routing for analysing logs and metrics generated by the VPC instance.",
+              "id": "a3137d28-79e0-479d-8a24-758ebd5a0eab-global",
+              "version": "v3.0.3",
+              "flavors": [
+                "instances"
+              ],
+              "catalog_id": "7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3",
+              "optional": true,
+              "on_by_default": true,
+              "input_mapping": [
+                {
+                  "dependency_input": "prefix",
+                  "version_input": "prefix",
+                  "reference_version": true
+                },
+                {
+                  "dependency_input": "region",
+                  "version_input": "region",
+                  "reference_version": true
+                },
+                {
+                  "dependency_input": "enable_platform_metrics",
+                  "version_input": "enable_platform_metrics",
+                  "reference_version": true
+                },
+                {
+                  "dependency_input": "logs_routing_tenant_regions",
+                  "version_input": "logs_routing_tenant_regions",
+                  "reference_version": true
+                }
+              ]
+            }
+          ],
+          "dependency_version_2": true,
+          "terraform_version": "1.10.6"
+        }
+      ]
+    }
+  ]
+}
