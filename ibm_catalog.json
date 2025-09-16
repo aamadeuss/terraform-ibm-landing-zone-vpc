@@ -473,7 +473,8 @@
               "key": "flow_logs_cos_bucket_minimum_retention_days"
             },
             {
-              "key": "flow_logs_cos_bucket_enable_permanent_retention"
+              "key": "flow_logs_cos_bucket_enable_permanent_retention",
+              "required": true
             },
             {
               "key": "provider_visibility",
