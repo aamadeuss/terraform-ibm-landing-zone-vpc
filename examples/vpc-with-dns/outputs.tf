@@ -17,7 +17,7 @@ output "network_acls" {
   description = "VPC network ACLs"
 }
 
-output "public_gateways" {
+output "publicgateways" {
   value       = module.slz_vpc.public_gateways
   description = "VPC public gateways"
 }
